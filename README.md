@@ -1,7 +1,7 @@
 # mpzoekertjes
 Marktplaats Script om in de browser te gebruiken op alle apparaten. met de extentie Tampermonkey.
 
-# Zoekertjes-app – Marktplaats & 2dehands
+## Zoekertjes-app – Marktplaats & 2dehands
 
 Een userscript voor **marktplaats.nl** en **2dehands.be** dat je helpt om sneller interessante advertenties te vinden en ophaalritten te plannen. Het draait in je eigen browser via Tampermonkey. Je hebt geen server, account of installatie van software nodig.
 
@@ -46,7 +46,7 @@ Een userscript voor **marktplaats.nl** en **2dehands.be** dat je helpt om snelle
    - [Chrome / Edge / Brave](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
    - [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)
    - Safari en andere browsers: zie [tampermonkey.net](https://www.tampermonkey.net)
-2. Open het bestand [`marktplaats-widget.user.js`](marktplaats-widget.user.js) in deze repository en klik op **Raw**. Tampermonkey herkent het script en toont een installatiescherm. Klik op **Installeren**.
+2. Klik op deze link: **[➜ Script installeren](https://raw.githubusercontent.com/Dutch-Vertigo/mpzoekertjes/main/marktplaats-widget.user.js)**. Tampermonkey herkent het script en toont een installatiescherm; klik op **Installeren**.
    *(Werkt dat niet? Open Tampermonkey → **Nieuw script maken**, plak de volledige inhoud van het bestand erin en sla op met Ctrl/Cmd + S.)*
 3. **Chrome / Edge:** recente versies voeren userscripts alleen uit als je dat toestaat. Open `chrome://extensions` (of `edge://extensions`), klik bij Tampermonkey op **Details** en zet **Gebruikersscripts toestaan** aan. Zie je die schakelaar niet? Zet dan rechtsboven de **Ontwikkelaarsmodus** aan.
 4. Ga naar [marktplaats.nl](https://www.marktplaats.nl) of [2dehands.be](https://www.2dehands.be). De widget verschijnt rechtsonder.
@@ -55,14 +55,14 @@ Een userscript voor **marktplaats.nl** en **2dehands.be** dat je helpt om snelle
 **Tip:** log in op beide sites als je de berichten van allebei wilt zien.
 
 ### Updates
-Staat er een nieuwe versie in deze repository? Herhaal dan stap 2. Je opgeslagen zoekopdrachten, rit en instellingen blijven bewaard.
+Het script werkt zichzelf bij. Tampermonkey kijkt regelmatig (standaard dagelijks) of er in deze repository een nieuwere versie staat en installeert die. Meteen bijwerken kan ook: open Tampermonkey → **Hulpprogramma's** → **Controleren op updates van gebruikersscripts**, of klik nogmaals op de installatielink hierboven. Je opgeslagen zoekopdrachten, rit en instellingen blijven bewaard.
 
 ---
 
 ## Gebruik
 
 1. Klik in de widget op **Zoeken ▦**.
-2. Vul een **zoekterm** in en pas eventueel postcode, straal, prijs en tijdvak aan. Klik op **Zoeken**.
+2. Vul een **zoekterm** en je **postcode** in, en pas eventueel straal, prijs en tijdvak aan. Klik op **Zoeken**.
 3. Wissel bovenaan tussen **Lijst**, **Raster** en **Kaart**.
 4. Klik op **Opslaan…** om de zoekopdracht te bewaren. De eerste opgeslagen zoekopdracht verschijnt ook in de widget.
 5. Klik op **+ Rit** bij advertenties die je wilt ophalen. Daarna opent **Route openen in Google Maps** de hele route.
@@ -133,7 +133,7 @@ Laat je automatisering met `to`, `subject` en `html` een e-mail versturen. Je ku
 
 - **Je browser moet openstaan.** Meldingen en e-mails werken alleen zolang er minstens één tabblad met marktplaats.nl of 2dehands.be open is (dat mag op de achtergrond). Bij een gesloten browser of uitgeschakelde computer wordt er niets gecontroleerd.
 - **Een zoekterm is verplicht.** Beide sites geven geen resultaten zonder zoekterm.
-- **Postcodes:** gebruik een Nederlandse postcode (`6041GE`) of een Belgische (`3640`). Zoek je vanaf een Nederlandse postcode op 2dehands (of andersom)? Dan zoekt de app vanaf de dichtstbijzijnde plaats over de grens en filtert daarna op de echte afstand tot jouw postcode.
+- **Postcodes:** gebruik een Nederlandse postcode (`1234AB`) of een Belgische (`1234`). Je vult hem één keer in de app in; daarna wordt hij onthouden. Zoek je vanaf een Nederlandse postcode op 2dehands (of andersom)? Dan zoekt de app vanaf de dichtstbijzijnde plaats over de grens en filtert daarna op de echte afstand tot jouw postcode.
 - **Locaties op de kaart** zijn per plaats, niet per adres. Meerdere advertenties uit dezelfde plaats staan op hetzelfde punt; zoom in om ze uit elkaar te halen.
 - **Maximum per site:** standaard 200 advertenties per site per zoekopdracht, in te stellen tot 1000. Meer advertenties betekent langer laden.
 
@@ -161,7 +161,7 @@ Bovenaan in `marktplaats-widget.user.js` staat een blok `CONFIG`. Dat kun je in 
 | `refreshSeconds` | `60` | Hoe vaak de widget nieuwe gegevens ophaalt |
 | `widgetItems` | `6` | Aantal items in de widget |
 | `notifyMinutes` | `5` | Hoe vaak er gecontroleerd wordt voor browsermeldingen |
-| `defaultSearch.postcode` | `6041GE` | Standaardpostcode van de app; **pas deze aan naar je eigen postcode** |
+| `defaultSearch.postcode` | *(leeg)* | Optioneel een vaste standaardpostcode; normaal vul je je postcode in de app in en wordt hij onthouden |
 | `defaultSearch.radiusKm` | `100` | Standaardstraal in km |
 
 ---
@@ -185,4 +185,3 @@ Zie je een fout, of heb je een idee? Maak een **issue** aan of stuur een **pull 
 - welke browser en welke Tampermonkey-versie je gebruikt;
 - op welke site (Marktplaats of 2dehands) het misgaat;
 - wat je deed en wat je zag (een screenshot helpt).
-
